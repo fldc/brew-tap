@@ -3,15 +3,6 @@ class PidginMac < Formula
   homepage "https://pidgin.im/"
   version "2.11.1"
   url "ssh://hg@bitbucket.org/fldc/pidgin", :using => :hg
-  #sha256 "f72613440586da3bdba6d58e718dce1b2c310adf8946de66d8077823e57b3333"
-  #head "ssh://hg@bitbucket.org/fldc/pidgin", :using => :hg
-
-  bottle do
-    sha256 "af3ead310f0c64642b0e231c2efc30d6f9a6f3fc8041ac1074f0bf0c0876cc7b" => :sierra
-    sha256 "52962570a3c7ad641a990054e48e677749ff787792ae4baef4b8221b30cb23bd" => :el_capitan
-    sha256 "8bcee9a4d3b7a5eb75956fae72e99da7278aab11f4da29b543d76459709e4057" => :yosemite
-    sha256 "0cc25abde42aca098cd2009df81044aa15b5bf02996f9c23a9fe9ea159f315ac" => :mavericks
-  end
 
   option "with-perl", "Build Pidgin with Perl support"
   option "without-gui", "Build only Finch, the command-line client"
@@ -21,6 +12,7 @@ class PidginMac < Formula
 
   depends_on "pkg-config" => :build
   depends_on "intltool" => :build
+  depends_on "libtool" => :build
   depends_on "gettext"
   depends_on "gsasl" => :optional
   depends_on "gnutls"
