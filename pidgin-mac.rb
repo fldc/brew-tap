@@ -1,9 +1,9 @@
 class PidginMac < Formula
   desc "Multi-protocol chat client"
   homepage "https://pidgin.im/"
-  url "https://downloads.sourceforge.net/project/pidgin/Pidgin/2.11.0/pidgin-2.11.0.tar.bz2"
-  sha256 "f72613440586da3bdba6d58e718dce1b2c310adf8946de66d8077823e57b3333"
-  head "ssh://hg@bitbucket.org/fldc/pidgin", :using => :hg
+  url "ssh://hg@bitbucket.org/fldc/pidgin", :using => :hg
+  #sha256 "f72613440586da3bdba6d58e718dce1b2c310adf8946de66d8077823e57b3333"
+  #head "ssh://hg@bitbucket.org/fldc/pidgin", :using => :hg
 
   bottle do
     sha256 "af3ead310f0c64642b0e231c2efc30d6f9a6f3fc8041ac1074f0bf0c0876cc7b" => :sierra
@@ -68,7 +68,7 @@ class PidginMac < Formula
       args << "--disable-gtkui"
     end
 
-    system "./configure", *args
+    system "./autogen.sh", *args
     system "make", "install"
 
     if build.with? "gui"
