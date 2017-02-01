@@ -1,6 +1,7 @@
 class PidginMac < Formula
   desc "Multi-protocol chat client"
   homepage "https://pidgin.im/"
+  version "2.11.1"
   url "ssh://hg@bitbucket.org/fldc/pidgin", :using => :hg
   #sha256 "f72613440586da3bdba6d58e718dce1b2c310adf8946de66d8077823e57b3333"
   #head "ssh://hg@bitbucket.org/fldc/pidgin", :using => :hg
